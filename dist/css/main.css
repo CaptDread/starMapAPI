@@ -1,0 +1,345 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(../img/space1.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+/* 2. Content ================================= */
+.sun {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	background: linear-gradient(25deg, #f1ce41, #ffcc00, #fd7a16);
+	box-shadow: 0px 0px 50px #ffcc007c;
+}
+.sun .planet {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50px;
+	box-shadow: 0px 0px 50px #fff;
+}
+.sun .orbit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50px;
+	width: 200px;
+	height: 200px;
+	border: 1px dashed white;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.sun .mercury {
+	-webkit-transform-origin: 100px 0px;
+	        transform-origin: 100px 0px;
+	-webkit-transform: translate(-100px, -50%) rotate(0deg);
+	        transform: translate(-100px, -50%) rotate(0deg);
+	width: 10px;
+	height: 10px;
+	background: linear-gradient(25deg, #ee854c, #853c14, #851814);
+	transition: -webkit-transform 14080s linear;
+	transition: transform 14080s linear;
+	transition: transform 14080s linear, -webkit-transform 14080s linear;
+}
+.sun:hover .mercury {
+	-webkit-transform: translate(-100px, -50%) rotate(3600deg);
+	        transform: translate(-100px, -50%) rotate(3600deg);
+}
+.sun .venus {
+	-webkit-transform-origin: 130px 0px;
+	        transform-origin: 130px 0px;
+	-webkit-transform: translate(-130px, -50%) rotate(0deg);
+	        transform: translate(-130px, -50%) rotate(0deg);
+	width: 18px;
+	height: 18px;
+	background: linear-gradient(25deg, #fff, #bdb191, #ccc);
+	transition: -webkit-transform 58320s linear;
+	transition: transform 58320s linear;
+	transition: transform 58320s linear, -webkit-transform 58320s linear;
+}
+.sun:hover .venus {
+	-webkit-transform: translate(-130px, -50%) rotate(3600deg);
+	        transform: translate(-130px, -50%) rotate(3600deg);
+}
+.sun .earth {
+	-webkit-transform-origin: 180px 0px;
+	        transform-origin: 180px 0px;
+	-webkit-transform: translate(-180px, -50%) rotate(0deg);
+	        transform: translate(-180px, -50%) rotate(0deg);
+	width: 18px;
+	height: 18px;
+	background: linear-gradient(25deg, green, #fff, blue);
+	transition: -webkit-transform 240s linear;
+	transition: transform 240s linear;
+	transition: transform 240s linear, -webkit-transform 240s linear;
+}
+.sun:hover .earth {
+	-webkit-transform: translate(-180px, -50%) rotate(3600deg);
+	        transform: translate(-180px, -50%) rotate(3600deg);
+}
+.sun .mars {
+	-webkit-transform-origin: 220px 0px;
+	        transform-origin: 220px 0px;
+	-webkit-transform: translate(-220px, -50%) rotate(0deg);
+	        transform: translate(-220px, -50%) rotate(0deg);
+	width: 13px;
+	height: 13px;
+	background: linear-gradient(25deg, orange, red, #666);
+	transition: -webkit-transform 250s linear;
+	transition: transform 250s linear;
+	transition: transform 250s linear, -webkit-transform 250s linear;
+}
+.sun:hover .mars {
+	-webkit-transform: translate(-220px, -50%) rotate(3600deg);
+	        transform: translate(-220px, -50%) rotate(3600deg);
+}
+.sun .jupiter {
+	-webkit-transform-origin: 300px 0px;
+	        transform-origin: 300px 0px;
+	-webkit-transform: translate(-300px, -50%) rotate(0deg);
+	        transform: translate(-300px, -50%) rotate(0deg);
+	width: 56px;
+	height: 56px;
+	background: linear-gradient(0deg, #bdb191, #ccc, #bdb191);
+	transition: -webkit-transform 100s linear;
+	transition: transform 100s linear;
+	transition: transform 100s linear, -webkit-transform 100s linear;
+}
+.sun:hover .jupiter {
+	-webkit-transform: translate(-300px, -50%) rotate(3600deg);
+	        transform: translate(-300px, -50%) rotate(3600deg);
+}
+.sun .saturn {
+	-webkit-transform-origin: 380px 0px;
+	        transform-origin: 380px 0px;
+	-webkit-transform: translate(-380px, -50%) rotate(0deg);
+	        transform: translate(-380px, -50%) rotate(0deg);
+	width: 48px;
+	height: 48px;
+	background: linear-gradient(25deg, #fff, #bdb191, #ccc);
+	transition: -webkit-transform 110s linear;
+	transition: transform 110s linear;
+	transition: transform 110s linear, -webkit-transform 110s linear;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.sun .saturn .ring {
+	position: relative;
+	margin-left: -10px;
+	margin-right: -10px;
+	height: 2px;
+	-webkit-transform: rotateZ(-15deg);
+	        transform: rotateZ(-15deg);
+	border-radius: 15px;
+	background: linear-gradient(25deg, #fff, #bdb191, #ccc);
+}
+.sun:hover .saturn {
+	-webkit-transform: translate(-380px, -50%) rotate(3600deg);
+	        transform: translate(-380px, -50%) rotate(3600deg);
+}
+.sun .uranus {
+	-webkit-transform-origin: 440px 0px;
+	        transform-origin: 440px 0px;
+	-webkit-transform: translate(-440px, -50%) rotate(0deg);
+	        transform: translate(-440px, -50%) rotate(0deg);
+	width: 24px;
+	height: 24px;
+	background: linear-gradient(25deg, green, #77eeee, #7cf3ae);
+	transition: -webkit-transform 170s linear;
+	transition: transform 170s linear;
+	transition: transform 170s linear, -webkit-transform 170s linear;
+}
+.sun:hover .uranus {
+	-webkit-transform: translate(-440px, -50%) rotate(3600deg);
+	        transform: translate(-440px, -50%) rotate(3600deg);
+}
+.sun .neptune {
+	-webkit-transform-origin: 500px 0px;
+	        transform-origin: 500px 0px;
+	-webkit-transform: translate(-500px, -50%) rotate(0deg);
+	        transform: translate(-500px, -50%) rotate(0deg);
+	width: 24px;
+	height: 24px;
+	background: linear-gradient(25deg, #5151f5, #3939b4, #3c3cf0);
+	transition: -webkit-transform 160s linear;
+	transition: transform 160s linear;
+	transition: transform 160s linear, -webkit-transform 160s linear;
+}
+.sun:hover .neptune {
+	-webkit-transform: translate(-500px, -50%) rotate(3600deg);
+	        transform: translate(-500px, -50%) rotate(3600deg);
+}
+/*# sourceMappingURL=main.css.map */
